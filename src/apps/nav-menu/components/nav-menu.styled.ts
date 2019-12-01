@@ -1,14 +1,11 @@
 import styled from 'styled-components'
-// import breakpoint from 'styled-components-breakpoint'
 import { createBreakpoint, createMap } from 'styled-components-breakpoint'
 import myImage from '../../../root-app/static/images/background.png'
 
 const breakpoints = {
-    xs: 0,
-    sm: 576,
-    md: 768,
-    lg: 992,
-    xl: 1200,
+    mobileX: 375,
+    tabletX: 768,
+    desktopX: 1400,
 };
 
 const breakpoint = createBreakpoint(breakpoints);
@@ -22,9 +19,16 @@ export const HeaderContainer = styled.header({
     backgroundPositionX: '-216px',
     backgroundPositionY: '-106px',
     backgroundRepeat: 'no-repeat',
-    [`${breakpoint('md', 'lg')}`]: {
-        background: 'green',
-    }
+    // [`${breakpoint('mobileX', 'tabletX')}`]: {
+    //     background: 'red',
+    // },
+    // [`${breakpoint('desktopX')}`]: {
+    //     background: 'green',
+    // }
+    // [`${map({ xl: 'red' }, background => `background: ${background}`)}`]: {
+    //     background: 'blue'
+    // },
+
 })
 
 export const NavContainer = styled.nav({
@@ -54,15 +58,10 @@ export const LiItem = styled.li({
     fontSize: 16,
     marginTop: '15px',
     whiteSpace: 'nowrap',
-    '&.toggle': {
-        // to do
-        textDecoration: 'underline',
-    },
 })
 
 export const Logo = styled.li({
     ['&.toggle']: {
-        // to do
         textDecoration: 'none',
     },
 })
@@ -167,7 +166,6 @@ export const CaseSpan = styled.span({
     letterSpacing: 'normal',
 })
 
-// Menu Modal
 
 export const MenuContainer = styled.div({
     display: 'flex',
