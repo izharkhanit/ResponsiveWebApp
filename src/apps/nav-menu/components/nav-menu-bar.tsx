@@ -50,7 +50,7 @@ export class NavMenuBar extends React.Component {
             <HeaderContainer style={{ background: hideCrossMenu ? '#0e0e0e' : undefined, transition: `background 1s` }}>
                 <NavContainer style={{ borderBottom: hideCrossMenu ? 'unset' : '1px solid' }}>
                     <UlNavLeft>
-                        <Logo ><AnchorLogo style={{ color: hideCrossMenu ? 'white' : undefined }}>DEPT</AnchorLogo></Logo>
+                        <Logo ><AnchorLogo style={{ color: hideCrossMenu ? 'white' : undefined }}>COMPANY</AnchorLogo></Logo>
 
                     </UlNavLeft>
                     <UlNavRight>

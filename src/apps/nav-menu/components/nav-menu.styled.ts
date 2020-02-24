@@ -1,15 +1,6 @@
 import styled from 'styled-components'
-import { createBreakpoint, createMap } from 'styled-components-breakpoint'
+import { between } from 'styled-breakpoints'
 import myImage from '../../../root-app/static/images/background.png'
-
-const breakpoints = {
-    mobileX: 375,
-    tabletX: 768,
-    desktopX: 1400,
-};
-
-const breakpoint = createBreakpoint(breakpoints);
-const map = createMap(breakpoints);
 
 export const HeaderContainer = styled.header({
     backgroundImage: `url(${myImage})`,
@@ -19,16 +10,13 @@ export const HeaderContainer = styled.header({
     backgroundPositionX: '-216px',
     backgroundPositionY: '-106px',
     backgroundRepeat: 'no-repeat',
-    // [`${breakpoint('mobileX', 'tabletX')}`]: {
-    //     background: 'red',
-    // },
-    // [`${breakpoint('desktopX')}`]: {
-    //     background: 'green',
-    // }
-    // [`${map({ xl: 'red' }, background => `background: ${background}`)}`]: {
-    //     background: 'blue'
-    // },
 
+    [`${between("sm", "md")}`]: {
+        backgroundImage: `url(${myImage})`,
+        backgroundSize: '268%',
+        backgroundPositionX: '30%',
+        backgroundPositionY: 0,
+    },
 })
 
 export const NavContainer = styled.nav({
@@ -36,6 +24,10 @@ export const NavContainer = styled.nav({
     justifyContent: 'center',
     margin: '30px 100px',
     borderBottom: '1px solid',
+    [`${between("sm", "md")}`]: {
+        background: 'white',
+        margin: 'auto',
+    },
 })
 
 export const UlNavLeft = styled.ul({
@@ -136,6 +128,7 @@ export const AnchorWork = styled.div({
     letterSpacing: 'normal',
     color: '#0e0e0e',
     textDecoration: 'none',
+
 })
 
 export const Case = styled.div({
@@ -144,11 +137,19 @@ export const Case = styled.div({
     alignItems: 'flex-end',
     height: '330px',
     marginRight: '100px',
+    [`${between("sm", "md")}`]: {
+        height: '62%',
+        margin: '0',
+        boxSizing: 'border-box',
+    },
 })
 export const CaseAnchor = styled.a({
     width: '170px',
     height: '50px',
     backgroundColor: '#0e0e0e',
+    [`${between("sm", "md")}`]: {
+        width: '100%',
+    },
 
 })
 export const CaseSpan = styled.span({
@@ -164,6 +165,10 @@ export const CaseSpan = styled.span({
     fontStyle: 'normal',
     lineHeight: 2,
     letterSpacing: 'normal',
+    [`${between("sm", "md")}`]: {
+        fontSize: '212%',
+        margin: '-15px',
+    },
 })
 
 
@@ -229,7 +234,7 @@ export const LiItemSide = styled.li({
         fontSize: '12px',
         marginTop: '0',
     },
-    [`&:hover ${TriangleIcon}`]: {
+    [`&: hover ${TriangleIcon}`]: {
         display: 'inline-block',
         borderTop: '5px solid transparent',
         borderBottom: '5px solid transparent',
@@ -276,7 +281,7 @@ export const AnchorMenuModal = styled.a({
         textDecoration: 'none',
         color: '#ffffff',
     },
-    [`&:hover ${TriangleIcon}`]: {
+    [`&: hover ${TriangleIcon}`]: {
         display: 'inline-block',
     },
 })
